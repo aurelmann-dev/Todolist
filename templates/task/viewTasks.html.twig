@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Symfony = To do List !
+{% endblock %}
+
+{% block body %}
+	<div>
+		<h2>Liste des tâches existantes</h2>
+
+	</div>
+
+
+	<br>
+
+	<div>
+
+		<table>
+			<thead>
+				<tr>
+					<td>Nom de Tâche</td>
+					<td>État</td>
+				</tr>
+			</thead>
+
+			<tbody>
+				{% for task in showTasks %}
+					<tr>
+						<td>
+							{{ task.title}}
+						</td>
+						<td>
+							{% if task.state == 1 %}
+								<p>Terminé</p>
+							{% else %}
+								<p>A faire</p>
+							{% endif %}
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+
+	<br>
+	<div>
+		<a href=" {{ path('app_home') }} ">Retour Listes</a>
+		<a href=" {{ path('app_new_task') }} ">Nouvelle tâche</a>
+	</div>
+{% endblock %}

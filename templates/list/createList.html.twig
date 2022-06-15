@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TodolistController!
+{% endblock %}
+
+{% block body %}
+
+	CREA NOUVELLE LISTE
+
+	{# Form new list #}
+	{{ form_start (formNewList)}}
+	{{form_row (formNewList.name, { 'label': 'Nom de liste' }) }}
+
+	<button type="submit">Enregistrer</button>
+	{{ form_end (formNewList) }}
+{% endblock %}

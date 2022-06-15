@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Symfony = To do List !
+{% endblock %}
+
+{% block body %}
+	<div>
+		<h2>EPCF - SYMFONY - juin 2022</h2>
+		<h1>TO DO LIST</h1>
+	</div>
+
+	<div>
+		<a href=" {{ path('app_new_list') }} ">Nouvelle liste</a>
+		<a href=" {{ path('app_new_task') }} ">Nouvelle tâche</a>
+	</div>
+
+    <br>
+
+	<div>
+
+		<table>
+			<thead>
+				<tr>
+					<td>Nom de liste</td>
+					<td>Nombre de tâche(s)</td>
+				</tr>
+			</thead>
+
+			<tbody>
+				{% for list in showLists %}
+					<tr>
+					
+						<td><a href="{{ path ('liste',  {'id' : list.id} ) }}">{{ list.name }}</a></td>
+					
+					
+						<td>
+							**
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+
+<br>
+	<div>
+		<a href=" {{ path('app_show_taks') }} ">Voir toutes les tâches</a>
+	</div>
+{% endblock %}

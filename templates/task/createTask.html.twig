@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TaskController!
+{% endblock %}
+
+{% block body %}
+
+
+	Nouvelle tâche pour la liste : 
+		<strong>{{list.name}}</strong>
+
+	{# Form new task #}
+	{{ form_start (formNewTask) }}
+	{{ form_row(formNewTask.title, { 'label': 'Titre de la tâche' }) }}
+	{{ form_row(formNewTask.state, { 'label': 'État de la tâche' }) }}
+	{# {{ form_row(formNewTask.list, { 'label': 'Liste attribée'}) }} #}
+
+
+	{# {% if formNewTask.state == true %}
+			{{ form_row(formNewTask.state, { 'label': 'tata' }) }}
+		{% else %}
+			{{ form_row(formNewTask.state, { 'label': 'toto' }) }}
+		{% endif %} #}
+
+	{# {{dump(showList)}} #}
+
+	{{ form_rest(formNewTask) }}
+
+	<button type="submit">Enregistrer</button>
+	{{ form_end (formNewTask) }}
+
+{% endblock %}

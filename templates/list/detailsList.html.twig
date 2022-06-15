@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TodolistController!
+{% endblock %}
+
+{% block body %}
+
+<h3>Liste :
+	{{ list.name}}</h3>
+
+<p>Détails des tâches affectées à cette liste :</p>
+
+{%  for task in tasks %}
+	<article>
+		<p>{{task.title}}
+			{% if  task.state == 1 %}
+				<span class="text_green">→ Terminée</span>
+			{% else %}
+				<span class="text_red">→ A faire</span>
+			{% endif %}
+			<button>Modifier</button>
+			</p>
+	</article>
+	{% endfor %}
+
+	<a href="{{ path ('app_new_task',  {'id' : list.id} ) }}">Ajouter une nouvelle tâche</a>
+{% endblock %}

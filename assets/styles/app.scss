@@ -1,0 +1,28 @@
+* {
+    font-family: 'calibri';
+}
+
+table{
+    border-collapse: collapse;
+    width: 20%;
+    thead{
+        td{
+            background-color: purple;
+            color: white;
+        }
+    }
+    td{
+        border: 1px solid black;
+        border-collapse: collapse;
+        height: 30px;
+    }
+}
+
+.text_red{
+    color: brown;
+    font-weight: bold;
+}
+
+.text_green{
+    color: green;
+}
